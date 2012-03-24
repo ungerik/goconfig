@@ -29,12 +29,11 @@ the Python Standard Library.
 
 ## Installation
 
-	goinstall github.com/kless/goconfig/config
+	go get github.com/kless/goconfig/config
 
+To run the tests:
 
-## Configuration
-
-Nothing.
+	cd ${GOPATH//:*}/src/github.com/kless/goconfig/config && go test && cd -
 
 
 ## Operating instructions
@@ -89,13 +88,11 @@ This results in the file:
 Note that sections, options and values are all case-sensitive.
 
 
-## Licensing
+## Copyright and licensing
 
-***Copyright 2009  The "goconfig" Authors***  
-See file AUTHORS and CONTRIBUTORS.
-
-Licensed under **BSD 2-Clause License**.  
-See file LICENSE.
+*Copyright 2009  The "goconfig" Authors*. See file AUTHORS and CONTRIBUTORS.  
+Unless otherwise noted, the source files are distributed under the
+*Apache License, version 2.0* found in the LICENSE file.
 
 
 * * *

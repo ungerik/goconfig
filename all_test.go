@@ -1,11 +1,16 @@
 // Copyright 2009  The "goconfig" Authors
 //
-// Use of this source code is governed by the BSD 2-Clause License
-// that can be found in the LICENSE file.
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
 //
-// This software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES
-// OR CONDITIONS OF ANY KIND, either express or implied. See the License
-// for more details.
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 
 package config
 
@@ -191,7 +196,7 @@ func TestInMemory(t *testing.T) {
 func TestReadFile(t *testing.T) {
 	file, err := os.Create(tmp)
 	if err != nil {
-		t.Fatalf("Test cannot run because cannot write temporary file: " + tmp)
+		t.Fatal("Test cannot run because cannot write temporary file: " + tmp)
 	}
 
 	buf := bufio.NewWriter(file)
@@ -213,7 +218,7 @@ func TestReadFile(t *testing.T) {
 
 	c, err := ReadDefault(tmp)
 	if err != nil {
-		t.Fatalf("ReadDefault failure: " + err.Error())
+		t.Fatalf("ReadDefault failure: %s", err)
 	}
 
 	// check number of sections
@@ -255,7 +260,7 @@ func TestWriteReadFile(t *testing.T) {
 	// read back file and test
 	cr, err := ReadDefault(tmp)
 	if err != nil {
-		t.Fatalf("ReadDefault failure: " + err.Error())
+		t.Fatalf("ReadDefault failure: %s", err)
 	}
 
 	testGet(t, cr, "First-Section", "option1", "value option1")
